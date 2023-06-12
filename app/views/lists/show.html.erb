@@ -1,0 +1,15 @@
+<h1><%= @list.name %></h1>
+
+<div class="container">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="container mb-3 border">
+      <div class="fw-bold"><%= bookmark.movie.title %></div>
+      <p><div><%= bookmark.movie.rating %>⭐</div></p>
+      <div><%= bookmark.movie.overview %></div>
+      <div><%= bookmark.comment %></div>
+    </div>
+  <% end %>
+</div>
+
+
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
